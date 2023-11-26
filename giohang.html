@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Giỏ hàng</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="js/bootstrap.css">
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script src="js/jquery-3.6.0.min.js"></script>
+
+	<link rel="stylesheet" href="fonts/roboto.css">
+	<link rel="stylesheet" href="fonts/oswald.css">
+	<link rel="stylesheet" href="fonts/dancing.css">
+
+	<script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+	<script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+	<script type="text/javascript" src="js/javascript.js"></script>
+
+
+	<link rel="stylesheet" href="js/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="data.js"></script>
+	<script>
+		$(document).ready(function(){
+			let ktdon=1;
+			$("#click").click(function(){
+				var parent = this.parentElement.parentElement;   
+            	parent.remove();
+				$("#hienthithongtinnguoimua").remove()
+				localStorage.removeItem("sanphamduocmua")
+				$("#tamtinh").html("0VNĐ")
+				$("#tongcong").html("0VNĐ")
+				ktdon=0;
+			})
+			$("#hoantat").click(function(){
+				if(	ktdon==1){alert("Đơn hàng đã được lên và sẽ tới nơi trong thời gian sớm nhất")}
+				else(alert("Đơn hàng chưa hoàn thiện"))
+			})
+		})
+	</script>
+</head>
+
+<body>
+	<div class="topheader" id="header">
+
+	</div>
+
+
+	<div class="logovamenu" id="menu">
+
+	</div>
+	<div class="giohangchitiet">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<!-- <h2>Bag</h2> -->
+				</div>
+				<div class="col-sm-12">
+					<table class="shop_table table fontroboto">
+						<thead>
+							<tr>
+								<th class="product-thumbnail">Hình ảnh</th>
+								<th class="product-name">Sản phẩm</th>
+								<th class="product-price">Đơn giá</th>
+								<th class="product-size">Hãng</th>
+								<th class="product-remove">Hủy</th>
+							</tr>
+						</thead>
+						<tbody id="danhsachmua">
+						
+						</tbody>
+					</table>
+					<div class="actions">
+						<div class="row">
+							<div class="col-sm-5" >
+								<div id="hienthithongtinnguoimua">
+
+								</div>
+
+							</div>
+							<div class="col-sm-6">
+								<div class="detail_cart">
+								
+									<div class="total_cart fontroboto">
+										<h2>Hóa đơn</h2>
+										<table class="table">
+											<tbody>
+												<tr>
+													<th>Tạm tính</th>
+													<td style="padding-left: 50px;" id="tamtinh"></td>
+
+												</tr>
+												<tr style="transform: translateY(10px);">
+													<th>Phí vận chuyển</th>
+													<td>
+														<ul id="phivanchuyen">
+															
+
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<th>Tổng cộng</th>
+													<td style="padding-left: 50px;" id="tongcong"></td>
+												</tr>
+											</tbody>
+										</table>
+										<a href="#" class="checkout btn btn-warning" id="hoantat">Hoàn tất đơn hàng</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="footertop wow slideInUp" id="footer">
+
+	</div>
+
+	<div class="footerbottom wow slideInUp">
+		Copyright © 2021. All Rights Reserved
+	</div>
+
+</body>
+
+</html>

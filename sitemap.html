@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Site Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="js/bootstrap.css">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+
+
+  <link rel="stylesheet" href="fonts/roboto.css">
+  <link rel="stylesheet" href="fonts/oswald.css">
+  <link rel="stylesheet" href="fonts/dancing.css">
+
+  <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+
+
+
+  <link rel="stylesheet" href="js/font-awesome.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="data.js"></script>
+
+  <link rel="stylesheet" href="fonts/material-icon/all.css">
+  <style>
+    .tree li {
+      list-style-type: none;
+      margin: 0;
+      padding: 10px 5px 0 5px;
+      position: relative;
+    }
+
+    .tree li::before,
+    .tree li::after {
+      content: "";
+      left: -20px;
+      position: absolute;
+      right: auto;
+    }
+
+    .tree li::before {
+      border-left: 2px solid #000;
+      bottom: 50px;
+      height: 100%;
+      top: 0;
+      width: 1px;
+    }
+
+    .tree li::after {
+      border-top: 2px solid #000;
+      height: 20px;
+      top: 25px;
+      width: 25px;
+    }
+
+    .tree li span {
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border: 2px solid #000;
+      border-radius: 3px;
+      display: inline-block;
+      padding: 3px 8px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .tree>ul>li::before,
+    .tree>ul>li::after {
+      border: 0;
+    }
+
+    .tree li:last-child::before {
+      height: 27px;
+    }
+
+    .tree li span:hover {
+      background: #f7f7f9;
+      border: 2px solid #94a0b4;
+    }
+
+    [aria-expanded="false"]>.expanded,
+    [aria-expanded="true"]>.collapsed {
+      display: none;
+    }
+    .mausac{
+      text-decoration: none;
+      color:#ffa500 ;
+    }
+  </style>
+
+  <script>
+
+    function hienthisanphamdangban() {
+      for (let i = 0; i < 9; i++) {
+        if(i>=0 && i<3){
+          let temp = "<li>" +
+          "<span><i class='far fa-file'></i><a style='text-decoration: none; color: #ffa500' href='chitietsanpham.html' onclick='setMasp(" + ds[i].masp + ")' > "+ds[i].tensp+"</a></span>" +
+            " </li>"
+            $("#folder1").append(temp)
+        }
+        if(i>=3 && i<6){
+          let temp = "<li>" +
+          "<span><i class='far fa-file'></i><a style='text-decoration: none; color: #ffa500' href='chitietsanpham.html' onclick='setMasp(" + ds[i].masp + ")'> "+ds[i].tensp+"</a></span>" +
+            " </li>"
+            $("#folder2").append(temp)
+        }
+        if(i>=6 && i<9){
+          let temp = "<li>" +
+          "<span><i class='far fa-file'></i><a style='text-decoration: none; color: #ffa500' href='chitietsanpham.html' onclick='setMasp(" + ds[i].masp + ")'> "+ds[i].tensp+"</a></span>" +
+            " </li>"
+            $("#folder3").append(temp)
+        }
+      }
+
+    }
+    function hienthisanphamsapban(){
+      for (let i = 0; i < 3; i++) {
+        if(i==0){
+          let temp = "<li>" +
+          "<span><i class='far fa-file'></i><a style='text-decoration: none; color: #ffa500' href='chitietsanphamsapcapnhat.html' onclick='setMaspm(" + dsspm[i].masp + ")' > "+dsspm[i].tensp+"</a></span>" +
+            " </li>"
+            $("#folder4").append(temp)
+        }
+        if(i==1){
+          let temp = "<li>" +
+          "<span><i class='far fa-file'></i><a style='text-decoration: none; color: #ffa500' href='chitietsanphamsapcapnhat.html' onclick='setMaspm(" + dsspm[i].masp + ")'> "+dsspm[i].tensp+"</a></span>" +
+            " </li>"
+            $("#folder5").append(temp)
+        }
+        if(i==2){
+          let temp = "<li>" +
+          "<span><i class='far fa-file'></i><a style='text-decoration: none; color: #ffa500' href='chitietsanphamsapcapnhat.html' onclick='setMaspm(" + dsspm[i].masp + ")'> "+dsspm[i].tensp+"</a></span>" +
+            " </li>"
+            $("#folder6").append(temp)
+        }
+      }
+      
+    }
+
+    $(document).ready(function () {
+      $("#Modangnhap").click(function () {
+        $("#myModal").modal()
+      })
+      hienthisanphamdangban()
+      hienthisanphamsapban()
+    })
+  </script>
+</head>
+
+<body>
+  <div class="topheader" id="header">
+
+  </div>
+  <!-- end topheader -->
+  <div class="logovamenu" id="menu">
+
+  </div>
+
+  <div class="tree">
+    <ul>
+      <li>
+        <span><a style="color: #000; text-decoration: none" data-toggle="collapse" href="#Web" aria-expanded="true"
+            aria-controls="Web"><i class="collapsed"><i class="fas fa-folder"></i></i>
+            <i class="expanded"><i class="far fa-folder-open"></i></i>
+            T&D Shop</a></span>
+        <div id="Web" class="collapse show">
+          <ul>
+            <li>
+              <span><a style="color: #000; text-decoration: none" data-toggle="collapse" href="#page1"
+                  aria-expanded="false" aria-controls="page1"><i class="collapsed"><i class="fas fa-folder"></i></i>
+                  <i class="expanded"><i class="far fa-folder-open"></i></i>
+                  Các trang có trên web</a></span>
+              <ul>
+                <div id="page1" class="collapse">
+                  <li>
+                    <span><i class="far fa-file"></i><a class="mausac" style="text-decoration: none;" href="home.html"> Trang chủ</a></span>
+                  </li>
+                  <li>
+                    <span><i class="far fa-file"></i><a class="mausac" style="text-decoration: none;" href="danhsach.html">Tất cả sản phẩm</a></span>
+                  </li>
+                  <li>
+                    <span><i class="far fa-file"></i><a class="mausac" style="text-decoration: none;" href="Sony.html"> Sony</a></span>
+                  </li>
+                  <li>
+                    <span><i class="far fa-file"></i><a class="mausac" style="text-decoration: none;" href="SamSung.html"> SamSung</a></span>
+                  </li>
+                  <li>
+                    <span><i class="far fa-file"></i><a class="mausac" style="text-decoration: none;" href="LG.html"> LG</a></span>
+                  </li>
+                  <li>
+                    <span><i class="far fa-file"></i><a class="mausac" style="text-decoration: none;" href="news.html"> Tin tức</a></span>
+                  </li>
+                  <li>
+                    <span><i class="far fa-file"></i><a class="mausac" style="text-decoration: none;" href="gioithieu.html"> Giới thiệu</a></span>
+                  </li>
+                  <li>
+                    <span><i class="far fa-file"></i><a class="mausac" style="text-decoration: none;" href="#" id="Modangnhap"> Đăng nhập</a></span>
+                  </li>
+                  <li>
+                    <span><i class="far fa-file"></i><a class="mausac" style="text-decoration: none;" href="signup.html"> Đăng ký</a></span>
+                  </li>
+                  <li>
+                    <span><i class="far fa-file"></i><a class="mausac" style="text-decoration: none;" href="giohang.html"> Giỏ hàng</a></span>
+                  </li>
+                  <li>
+                    <span><i class="far fa-file"></i><a class="mausac" style="text-decoration: none;" href="sitemap.html"> Site Map</a></span>
+                  </li>
+                </div>
+              </ul>
+            </li>
+
+            <li>
+              <span><a style="color: #000; text-decoration: none" data-toggle="collapse" href="#Page2"
+                  aria-expanded="false" aria-controls="Page2"><i class="collapsed"><i class="fas fa-folder"></i></i>
+                  <i class="expanded"><i class="far fa-folder-open"></i></i>
+                  Sản phẩm hiện đang bán</a></span>
+              <ul>
+                <div id="Page2" class="collapse">
+                  <li>
+                    <span><a style="color: #000; text-decoration: none" data-toggle="collapse" href="#folder1"
+                        aria-expanded="false" aria-controls="folder1"><i class="collapsed"><i
+                            class="fas fa-folder"></i></i>
+                        <i class="expanded"><i class="far fa-folder-open"></i></i>
+                        TV Sony</a></span>
+                    <ul>
+                      <div id="folder1" class="collapse">
+                     
+                      </div>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <span><a style="color: #000; text-decoration: none" data-toggle="collapse" href="#folder2"
+                        aria-expanded="false" aria-controls="folder2"><i class="collapsed"><i
+                            class="fas fa-folder"></i></i>
+                        <i class="expanded"><i class="far fa-folder-open"></i></i>
+                        TV SamSung</a></span>
+                    <ul>
+                      <div id="folder2" class="collapse">
+                       
+                      </div>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <span><a style="color: #000; text-decoration: none" data-toggle="collapse" href="#folder3"
+                        aria-expanded="false" aria-controls="folder3"><i class="collapsed"><i
+                            class="fas fa-folder"></i></i>
+                        <i class="expanded"><i class="far fa-folder-open"></i></i>
+                        TV LG</a></span>
+                    <ul>
+                      <div id="folder3" class="collapse">
+                       
+                      </div>
+                    </ul>
+                  </li>
+
+
+
+                </div>
+              </ul>
+            </li>
+
+            <li>
+              <span><a style="color: #000; text-decoration: none" data-toggle="collapse" href="#Page3"
+                  aria-expanded="false" aria-controls="Page3"><i class="collapsed"><i class="fas fa-folder"></i></i>
+                  <i class="expanded"><i class="far fa-folder-open"></i></i>
+                  Sản phẩm sắp cập nhật trên shop</a></span>
+              <ul>
+                <div id="Page3" class="collapse">
+                  <li>
+                    <span><a style="color: #000; text-decoration: none" data-toggle="collapse" href="#folder4"
+                        aria-expanded="false" aria-controls="folder4"><i class="collapsed"><i
+                            class="fas fa-folder"></i></i>
+                        <i class="expanded"><i class="far fa-folder-open"></i></i>
+                        TV Sony</a></span>
+                    <ul>
+                      <div id="folder4" class="collapse">
+                     
+                      </div>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <span><a style="color: #000; text-decoration: none" data-toggle="collapse" href="#folder5"
+                        aria-expanded="false" aria-controls="folder5"><i class="collapsed"><i
+                            class="fas fa-folder"></i></i>
+                        <i class="expanded"><i class="far fa-folder-open"></i></i>
+                        TV SamSung</a></span>
+                    <ul>
+                      <div id="folder5" class="collapse">
+                       
+                      </div>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <span><a style="color: #000; text-decoration: none" data-toggle="collapse" href="#folder6"
+                        aria-expanded="false" aria-controls="folder6"><i class="collapsed"><i
+                            class="fas fa-folder"></i></i>
+                        <i class="expanded"><i class="far fa-folder-open"></i></i>
+                        TV LG</a></span>
+                    <ul>
+                      <div id="folder6" class="collapse">
+                       
+                      </div>
+                    </ul>
+                  </li>
+
+                  
+
+                </div>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="footertop wow slideInUp" id="footer">
+
+  </div>
+
+  <div class="footerbottom wow slideInUp">
+    Copyright © 2021. All Rights Reserved
+  </div>
+
+  <div class="modal" id="myModal">
+
+
+  </div>
+</body>
+
+</html>
